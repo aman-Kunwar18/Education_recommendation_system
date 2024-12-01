@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studies Recommendation</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .bg-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .bg-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("static/img1.jpg") no-repeat center/cover;
+        opacity: 0.4; /* Increased from 0.3 to 0.5 for better visibility */
+        filter: blur(6px); /* Reduced blur from 8px to 6px */
+        animation: backgroundChange 12s infinite;
+      }
+
+      @keyframes backgroundChange {
+        0% {
+          background: url("static/img1.jpg") no-repeat center/cover;
+        }
+        33% {
+          background: url("static/img2.jpg") no-repeat center/cover;
+        }
+        66% {
+          background: url("static/img3.jpg") no-repeat center/cover;
+        }
+        100% {
+          background: url("static/img4.jpg") no-repeat center/cover;
+        }
+      }
+
+      .glass-container {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        padding: 40px;
+        width: 90%;
+        max-width: 800px;
+        text-align: center;
+        color: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .glass-container h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #f1f1f1;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+      }
+
+      .glass-container p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .glass-container .btn-primary {
+        display: inline-block;
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .glass-container .btn-primary:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-container"></div>
+
+    <div class="glass-container">
+      <h1>
+        <i class="fas fa-book-reader"></i> Education Recommendation System
+      </h1>
+      <p>
+        The Education Recommendation System is designed to assist students in
+        making informed decisions about their education pathways. By analyzing
+        their academic performance, interests, and career aspirations, the
+        system recommends the top 5 education options along with probabilities
+        indicating the suitability for each option. This system is a great way
+        to leverage data for personalized learning and career planning.
+      </p>
+      <a href="/recommend" class="btn-primary">Get Recommendations</a>
+    </div>
+  </body>
+</html>
